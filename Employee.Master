@@ -1,0 +1,107 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Employee.Master.cs" Inherits="WebApplication2.homepage" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>WorkSync Solutions</title>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+
+    <style>
+        html, body {
+            height: 100%; /* Ensure html and body take full height */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fcf7f9; /* Background color */
+            display: flex;
+            flex-direction: column;
+        }
+        #form1 {
+            flex: 1; /* Make the form take up remaining space */
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            padding: 20px 0;
+            background-color: #0c0c3b; /* Dark Blue */
+            color: white;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            padding: 10px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            color: #E50019;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #E50019;
+            color: white;
+        }
+        .content {
+            flex: 1; /* Make content take up remaining space */
+            padding: 20px;
+        }
+        .footer {
+            text-align: center;
+            padding: 15px 0;
+            color: black;
+            font-size: 14px;
+            width: 100%;
+            border-top: 2px solid #333; 
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <!-- Header -->
+        <div class="header">
+            WorkSync Solutions
+        </div>
+
+        <!-- Navigation -->
+        <div class="navbar">
+    <asp:HyperLink ID="homehyperlink" runat="server" NavigateUrl="~/EmployeeDashboard.aspx">Home</asp:HyperLink>
+
+    <!-- Employee Links -->
+    <asp:HyperLink ID="worktaskhyperlink" runat="server" NavigateUrl="~/UpdateDailyWorkTask.aspx" Visible="false">Daily Work Task</asp:HyperLink>
+    <asp:HyperLink ID="leavehyperlink" runat="server" NavigateUrl="~/FileEmployeeLeave.aspx" Visible="false">File Leave</asp:HyperLink>
+    <asp:HyperLink ID="leavestatushyperlink" runat="server" NavigateUrl="~/ViewLeaveStatus.aspx" Visible="false">View Leave Status</asp:HyperLink>
+
+    <!-- Supervisor Links -->
+    <asp:HyperLink ID="manageLeaveHyperlink" runat="server" NavigateUrl="~/ManageEmployeeLeave.aspx" Visible="false">Manage Employee Leave</asp:HyperLink>
+    <asp:HyperLink ID="assignWorkTaskHyperlink" runat="server" NavigateUrl="~/AssignWorkTask.aspx" Visible="false">Assign Work Task</asp:HyperLink>
+    <asp:HyperLink ID="monitorWorkTasksHyperlink" runat="server" NavigateUrl="~/MonitorWorkTasks.aspx" Visible="false">Monitor Work Tasks</asp:HyperLink>
+
+    <!-- HR Links -->
+    <asp:HyperLink ID="createEmployeeHyperlink" runat="server" NavigateUrl="~/CreateEmployee.aspx" Visible="false">Create Employee</asp:HyperLink>
+    <asp:HyperLink ID="updateScheduleHyperlink" runat="server" NavigateUrl="~/UpdateEmployeeWorkSchedule.aspx" Visible="false">Manage Work Schedule</asp:HyperLink>
+    <asp:HyperLink ID="manageAccountHyperlink" runat="server" NavigateUrl="~/ManageAccount.aspx" Visible="False">Account Management</asp:HyperLink>
+
+    <asp:HyperLink ID="aboutushyperlink" runat="server" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink>
+</div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            Copyright 2025 | WorkSync Solutions | All Rights Reserved
+        </footer>
+    </form>
+</body>
+</html>
